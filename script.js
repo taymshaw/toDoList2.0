@@ -42,6 +42,7 @@ class ToDoList extends React.Component {
         this.fetchTasks = this.fetchTasks.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
         this.toggleComplete = this.toggleComplete.bind(this);
+        this.toggleFilter = this.toggleFilter.bind(this);
     }
 
     componentDidMount() {
@@ -61,7 +62,7 @@ class ToDoList extends React.Component {
         })
     }
 
-    deleteTask() {
+    deleteTask(id) {
         if (!id) {
             return;
         }

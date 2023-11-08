@@ -41,6 +41,7 @@ class ToDoList extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.fetchTasks = this.fetchTasks.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
+        this.toggleFliter = this.toggleFilter.bind(this);
         this.toggleComplete = this.toggleComplete.bind(this);
     }
 
@@ -61,7 +62,7 @@ class ToDoList extends React.Component {
         })
     }
 
-    deleteTask() {
+    deleteTask(id) {
         if (!id) {
             return;
         }

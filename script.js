@@ -41,8 +41,8 @@ class ToDoList extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.fetchTasks = this.fetchTasks.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
-        this.toggleFliter = this.toggleFilter.bind(this);
         this.toggleComplete = this.toggleComplete.bind(this);
+        this.toggleFilter = this.toggleFilter.bind(this);
     }
 
     componentDidMount() {
@@ -134,9 +134,9 @@ class ToDoList extends React.Component {
     }
 
     toggleFilter(e) {
-        console.log(e.target.name)
+        console.log(e.target.value);
         this.setState({
-            filter: e.target.name
+            filter: e.target.value
         })
     }
 
@@ -168,13 +168,13 @@ class ToDoList extends React.Component {
                         }) : <p>No tasks at the moment</p>}
                         <div className="mt-3">
                             <label>
-                                <input type="checkbox" name="all" checked={filter === "all"} onChange={this.toggleFilter} /> All
+                                <input type="radio" name="filter" value="all" checked={filter === "all"} onChange={this.toggleFilter} /> All
                             </label>
                             <label>
-                                <input type="checkbox" name="active" checked={filter === "active"} onChange={this.toggleFilter} /> Active
+                                <input type="radio" name="filter" value="active" checked={filter === "active"} onChange={this.toggleFilter} /> Active
                             </label>
                             <label>
-                                <input type="checkbox" name="completed" checked={filter === "completed"} onChange={this.toggleFilter} /> Completed
+                                <input type="radio" name="filter" value="completed" checked={filter === "completed"} onChange={this.toggleFilter} /> Completed
                             </label>
                         </div>
                         <form onSubmit={this.handleSubmit} className="form-inline my-4">

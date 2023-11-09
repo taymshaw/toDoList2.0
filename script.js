@@ -43,6 +43,7 @@ class ToDoList extends React.Component {
         this.deleteTask = this.deleteTask.bind(this);
         this.toggleFliter = this.toggleFilter.bind(this);
         this.toggleComplete = this.toggleComplete.bind(this);
+        this.toggleFilter = this.toggleFilter.bind(this);
     }
 
     componentDidMount() {
